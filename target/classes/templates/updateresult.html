@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>Updated training session</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <link href="../static/css/simple.css"
+          th:href="@{css/simple.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>training Name</th>
+        <th>Trainer</th>
+        <th>Time</th>
+    </tr>
+    <tr>
+        <td th:text="${training.id}">Id</td>
+        <td th:text="${training.title}">training Name</td>
+        <td th:text="${training.trainer}">Trainer</td>
+        <td th:text="${training.length}">Time</td>
+    </tr>
+</table>
+
+</body>
+</html>

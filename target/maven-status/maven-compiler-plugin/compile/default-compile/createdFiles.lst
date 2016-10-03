@@ -1,0 +1,11 @@
+org/example/ws/service/SessionService.class
+org/example/web/api/SessionController.class
+org/example/ws/service/BlockServiceBean.class
+org/example/ws/service/SessionServiceBean.class
+org/example/ws/model/Session.class
+org/example/ws/repository/SessionRepository.class
+org/example/ws/service/BlockService.class
+org/example/ws/model/Block.class
+org/example/Application.class
+org/example/web/api/BlockController.class
+org/example/ws/repository/BlockRepository.class

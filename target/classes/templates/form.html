@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create training training</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <link href="../static/css/simple.css"
+          th:href="@{css/simple.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<h1>Create training</h1>
+    <form  action="#" th:action="@{/form}" th:object="${training}" method="post">
+        <table>
+            <tr>
+                <td>Title:</td>
+                <td><input type="text" th:field="*{title}"/> </td>
+            </tr>
+            <tr>
+                <td>Trainer:</td>
+                <td><input type="text" th:field="*{trainer}"/></td>
+            </tr>
+            <tr>
+                <td>Time:</td>
+                <td><input type="text" th:field="*{length}"/></td>
+            </tr>
+            <tr>
+                <td>Blocks:</td>
+                <td><input type="text" th:field="*{blocks}"/></td>
+            </tr>
+        </table>
+        <input type="submit" th:value="Submit"/>
+    </form>
+
+<h2>Blocks</h2>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Time</th>
+        </tr>
+        <tr th:each="block : ${blocks}">
+            <td th:text="${block.id}">Id</td>
+            <td th:text="${block.title}">Title</td>
+            <td th:text="${block.description}">Description</td>
+            <td th:text="${block.minutes}">Time</td>
+        </tr>
+    </table>
+
+</body>
+</html>
