@@ -1,6 +1,8 @@
 package org.example.ws.service;
 
+import org.example.ws.model.Block;
 import org.example.ws.model.Training;
+import org.example.ws.repository.BlockRepository;
 import org.example.ws.repository.TrainingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,8 +21,10 @@ import java.util.Collection;
         readOnly = true)
 public class TrainingServiceBean implements TrainingService {
 
+   @Autowired
+   private BlockRepository blockRepository;
 
-
+   //
    @Autowired
    private TrainingRepository trainingRepository;
 
@@ -68,5 +72,16 @@ public class TrainingServiceBean implements TrainingService {
             readOnly = false)
     public void delete(Long id) {
        trainingRepository.delete(id);
+    }
+
+    @Override
+    @Transactional (propagation = Propagation.REQUIRED,
+            readOnly = false)
+    public Training addBlockToTraining(Block block, Training training){
+     //check if block exists
+        if(blockRepository.findOne(block.getId()) == null || trainingRepository.findOne(training.getId()) == null)
+            return null; // zle i do poprawy API DESIGN
+        training.getBlocks().add(block);
+        return trainingRepository.save(training);
     }
 }

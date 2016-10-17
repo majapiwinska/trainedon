@@ -1,5 +1,6 @@
 package org.example.ws.service;
 
+import org.example.ws.model.Block;
 import org.example.ws.model.Training;
 
 import java.util.Collection;
@@ -18,4 +19,6 @@ public interface TrainingService {
     Training update(Training training);
 
     void delete(Long id);
+
+    Training addBlockToTraining(Block block, Training training);
 }

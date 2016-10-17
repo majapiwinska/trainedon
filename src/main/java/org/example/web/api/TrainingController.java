@@ -7,10 +7,7 @@ import org.example.ws.service.TrainingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
@@ -35,6 +32,7 @@ public class TrainingController {
 
         Collection<Training> trainings = trainingService.findAll();
         model.addAttribute("trainings", trainings);
+
         return "index";
     }
 
@@ -70,6 +68,21 @@ public class TrainingController {
         return "trainingresult";
 
     }
+
+    @RequestMapping(
+            value = "/new_block/{trainingId}",
+            method = RequestMethod.POST
+    )
+    public String createBlockAndAddToTraining(Block block, Model model, @PathVariable("trainingId") Long trainingId){
+        Block savedBlock = blockService.create(block);
+        Training training = trainingService.findOne(trainingId);
+        Training savedTraining = trainingService.addBlockToTraining(block, training);
+
+        model.addAttribute("block", savedBlock);
+        model.addAttribute("training", savedTraining);
+
+        return "redirect:/form/"+trainingId;
+    };
 
     @RequestMapping(value = "/update/{id}",
             method = RequestMethod.GET)

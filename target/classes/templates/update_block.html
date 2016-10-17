@@ -4,17 +4,22 @@
     <title>Update block</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
-          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
-          rel="stylesheet" media="screen" />
+    <link href="/resources/bootstrap-4.0.0-alpha.4/dist/css/bootstrap.css"
+          th:href="@{/webjars/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
 
     <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
             th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
 
-    <link href="../static/css/simple.css"
-          th:href="@{css/simple.css}" rel="stylesheet" media="screen"/>
+    <link href="/startbootstrap-creative-gh-pages/css/creative.min.css" rel="stylesheet" media="screen"/>
+
 </head>
 <body>
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="/startbootstrap-creative-gh-pages/js/creative.min.js"></script>
+<script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
 
 <form  action="#" th:action="@{/update_block}" th:object="${block}" method="post">
     <table>

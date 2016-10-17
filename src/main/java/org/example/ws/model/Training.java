@@ -38,16 +38,21 @@ public class Training {
    private List<Block> blocks = new ArrayList<Block>() {
     };
 
+    /*@ManyToOne
+    @JoinColumn(name="block", referencedColumnName = "block_id")
+    private Block block;*/
+
     public Training(){}
 
-
-    public Training(String title, String trainer, List<Block> blocks){
+    public Training(String title, String trainer, List<Block> blocks, Block block){
 
         this.title = title;
 
         this.trainer = trainer;
 
         this.blocks = blocks;
+
+
     }
 
 

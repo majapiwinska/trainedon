@@ -30,13 +30,15 @@ public class Block {
     private int minutes;
 
 
-     @ManyToMany(cascade = CascadeType.ALL)
-     @JoinTable(
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
              name="training_block",
              joinColumns = {@JoinColumn(name = "block_id", referencedColumnName = "block_id")},
              inverseJoinColumns = {@JoinColumn(name = "training_id", referencedColumnName = "id")})
-     private List<Training> trainings = new ArrayList<Training>();
+    private List<Training> trainings = new ArrayList<Training>();
 
+    /*@OneToMany(mappedBy = "block")
+    private List<Training> trainingList;*/
 
     public Block(){};
 
@@ -85,4 +87,12 @@ public class Block {
     public void setTrainings(List<Training> trainings) {
         this.trainings = trainings;
     }
-}
+
+    /*public List<Training> getTrainingList() {
+        return trainingList;
+    }
+
+    public void setTrainingList(List<Training> trainingList) {
+        this.trainingList = trainingList;
+    }
+*/}

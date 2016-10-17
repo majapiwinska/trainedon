@@ -4,33 +4,34 @@
     <title>Trained on - blocks</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
-          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
-          rel="stylesheet" media="screen" />
+    <link href="/resources/bootstrap-4.0.0-alpha.4/dist/css/bootstrap.css"
+          th:href="@{/webjars/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
 
     <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
             th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
 
-    <link href="../static/css/simple.css"
-          th:href="@{css/simple.css}" rel="stylesheet" media="screen"/>
+    <link href="/startbootstrap-creative-gh-pages/css/creative.min.css" rel="stylesheet" media="screen"/>
 </head>
 <body>
-<h1>Blocks</h1>
 
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Time</th>
-    </tr>
-    <tr th:each="block : ${blocks}">
-        <td th:text="${block.id}">Id</td>
-        <td th:text="${block.title}">Title</td>
-        <td th:text="${block.description}">Description</td>
-        <td th:text="${block.minutes}">Time</td>
-    </tr>
-</table>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="/resources/startbootstrap-creative-gh-pages/js/creative.min.js"></script>
+<script src="/resources/bootstrap-4.0.0-alpha.4/dist/js/bootstrap.min.js"></script>
 
+
+<div class="row">
+    <h1>Blocks</h1>
+</div>
+<div class="row">
+    <div class="col-md-4"  th:each="block : ${blocks}">
+        <div class="card">
+            <div class="card-title" th:text="${block.title}"></div>
+            <div class="card-subtitle" th:text="${block.id}"></div>
+            <div class="card-text" th:text="${block.description}"></div>
+            <div class="card-text" th:text="${block.minutes}"></div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

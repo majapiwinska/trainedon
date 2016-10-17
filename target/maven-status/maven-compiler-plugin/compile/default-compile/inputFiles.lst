@@ -1,6 +1,12 @@
-/home/maja/IdeaProjects/training-web/src/main/java/org/example/web/api/SessionController.java
-/home/maja/IdeaProjects/training-web/src/main/java/org/example/ws/model/Session.java
-/home/maja/IdeaProjects/training-web/src/main/java/org/example/ws/service/SessionServiceBean.java
-/home/maja/IdeaProjects/training-web/src/main/java/org/example/ws/repository/SessionRepository.java
-/home/maja/IdeaProjects/training-web/src/main/java/org/example/ws/service/SessionService.java
+/home/maja/IdeaProjects/training-web/src/main/java/org/example/ws/service/TrainingServiceBean.java
+/home/maja/IdeaProjects/training-web/src/main/java/org/example/ws/repository/TrainingRepository.java
+/home/maja/IdeaProjects/training-web/src/main/java/org/example/ws/model/Training.java
+/home/maja/IdeaProjects/training-web/src/main/java/org/example/web/api/TrainingController.java
+/home/maja/IdeaProjects/training-web/src/main/java/org/example/ws/repository/BlockRepository.java
+/home/maja/IdeaProjects/training-web/src/main/java/org/example/ws/service/TrainingService.java
+/home/maja/IdeaProjects/training-web/src/main/java/org/example/ws/service/BlockServiceBean.java
+/home/maja/IdeaProjects/training-web/src/main/java/org/example/web/api/IndexController.java
+/home/maja/IdeaProjects/training-web/src/main/java/org/example/web/api/BlockController.java
+/home/maja/IdeaProjects/training-web/src/main/java/org/example/ws/model/Block.java
+/home/maja/IdeaProjects/training-web/src/main/java/org/example/ws/service/BlockService.java
 /home/maja/IdeaProjects/training-web/src/main/java/org/example/Application.java

@@ -1,46 +1,59 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Trained on</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
-          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
-          rel="stylesheet" media="screen" />
-
     <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
             th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
 
-    <link href="../static/css/simple.css"
-          th:href="@{css/simple.css}" rel="stylesheet" media="screen"/>
+    <link href="/resources/bootstrap-4.0.0-alpha.4/dist/css/bootstrap.css"
+             th:href="@{/webjars/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css}"
+             rel="stylesheet" media="screen"/>
+
     <script>
         function rowClicked(value){
             location.href="/form/" + value;
-        } {
-
         }
     </script>
 
+
 </head>
 <body>
-<h1>trainings</h1>
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>training Name</th>
-            <th>Trainer</th>
-            <th>Time</th>
-        </tr>
-        <tr th:each="training : ${trainings}" style="cursor: pointer"
-            th:onclick="'javascript:rowClicked(\''+${training.id}+'\');'">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="/resources/startbootstrap-creative-gh-pages/js/creative.min.js"></script>
+   <script src="/resources/bootstrap-4.0.0-alpha.4/dist/js/bootstrap.min.js"></script>
 
-            <td th:text="${training.id}">Id</td>
-            <td th:text="${training.title}">training Name</td>
-            <td th:text="${training.trainer}">Trainer</td>
-            <td th:text="${training.length}">Time</td>
-        </tr>
-    </table>
+    <div class="row">
+        <h1>Trainings</h1>
+    </div>
 
-
+    <div class="row">
+            <div class="col-md-4" th:each="training : ${trainings}" style="cursor: pointer" th:onclick="'javascript:rowClicked(\''+${training.id}+'\');'">
+                <div class="card">
+                    <div class="card-title" th:text="${training.title}"></div>
+                    <div class="card-text" th:text="${training.trainer}"></div>
+                    <div class="card-text" th:text="${training.length}"></div>
+                </div>
+            </div>
+    </div>
 </body>
 </html>
+<!--
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>training Name</th>
+        <th>Trainer</th>
+        <th>Time</th>
+    </tr>
+    <tr th:each="training : ${trainings}" style="cursor: pointer"
+        th:onclick="'javascript:rowClicked(\''+${training.id}+'\');'">
+
+        <td th:text="${training.id}">Id</td>
+        <td th:text="${training.title}">training Name</td>
+        <td th:text="${training.trainer}">Trainer</td>
+        <td th:text="${training.length}">Time</td>
+    </tr>
+</table>-->
