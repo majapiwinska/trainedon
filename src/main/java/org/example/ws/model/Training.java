@@ -30,6 +30,11 @@ public class Training {
     @NotNull
     private int length;
 
+
+    @Column(name = "userId")
+    @NotNull
+    private int userId;
+
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(
             name="training_block",
@@ -38,19 +43,18 @@ public class Training {
    private List<Block> blocks = new ArrayList<Block>() {
     };
 
-    /*@ManyToOne
-    @JoinColumn(name="block", referencedColumnName = "block_id")
-    private Block block;*/
 
     public Training(){}
 
-    public Training(String title, String trainer, List<Block> blocks, Block block){
+    public Training(String title, String trainer, List<Block> blocks, Block block, int userId){
 
         this.title = title;
 
         this.trainer = trainer;
 
         this.blocks = blocks;
+
+        this.userId = userId;
 
 
     }
@@ -96,4 +100,11 @@ public class Training {
         this.blocks = blocks;
     }
 
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 }

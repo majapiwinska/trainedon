@@ -42,19 +42,19 @@ public class BlockController {
     }
 
     @RequestMapping(
-            value = "/block_form",
+            value = "/blockForm",
             method = RequestMethod.GET
     )
-    public String createBlock(@ModelAttribute Block block){
+    public String createBlockView(@ModelAttribute Block block){
 
-        return "block_form";
+        return "blockForm";
     }
 
     @RequestMapping(
-            value = "/block_form",
+            value = "/blockForm",
             method = RequestMethod.POST
     )
-    public String createFormView(Block block, Model model){
+    public String createBlock(Block block, Model model){
 
         Block savedBlock= blockService.create(block);
         model.addAttribute("block", savedBlock);

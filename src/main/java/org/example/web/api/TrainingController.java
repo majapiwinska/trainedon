@@ -49,7 +49,7 @@ public class TrainingController {
 
     @RequestMapping(value = "/form",
             method = RequestMethod.GET)
-    public String createTraining(@ModelAttribute Training training, Model model){
+    public String createTrainingView(@ModelAttribute Training training, Model model){
 
         Collection<Block> blocks = blockService.findAll();
         model.addAttribute("blocks", blocks);
@@ -60,7 +60,7 @@ public class TrainingController {
             value = "/form",
             method = RequestMethod.POST
     )
-    public String createTrainingView(Training training, Model model){
+    public String createTraining(Training training, Model model){
 
         Training savedTraining = trainingService.create(training);
 
@@ -84,9 +84,11 @@ public class TrainingController {
         return "redirect:/form/"+trainingId;
     };
 
-    @RequestMapping(value = "/update/{id}",
-            method = RequestMethod.GET)
-    public String updateTrainingForm(Model model, @PathVariable("id") Long id){
+    @RequestMapping(
+            value = "/update/{id}",
+            method = RequestMethod.GET
+    )
+    public String updateTrainingView(Model model, @PathVariable("id") Long id){
         Training updatedTraining = trainingService.findOne(id);
         model.addAttribute("training", updatedTraining);
         return "updateform";    }
@@ -95,7 +97,7 @@ public class TrainingController {
             value = "/update",
             method = RequestMethod.POST
     )
-    public String updateSession(Training training, Model model){
+    public String updateTraining(Training training, Model model){
 
         Training updatedTraining = trainingService.update(training);
         model.addAttribute("training", updatedTraining);
