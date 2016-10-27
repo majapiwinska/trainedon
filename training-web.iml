@@ -36,7 +36,6 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-web:4.3.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-aop:4.3.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:4.3.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:4.3.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-jpa:1.4.0.RELEASE" level="project" />
@@ -78,12 +77,13 @@
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-devtools:1.4.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:1.4.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:1.4.0.RELEASE" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.springframework.security:spring-security-test:4.1.1.RELEASE" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.springframework.security:spring-security-core:4.1.1.RELEASE" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: aopalliance:aopalliance:1.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.springframework.security:spring-security-web:4.1.1.RELEASE" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:4.3.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-security:1.4.1.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-aop:4.3.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:4.1.1.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:4.1.1.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:4.1.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:bootstrap:4.0.0-alpha.3" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:bootstrap-material-design:0.5.9" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:jquery:3.1.1" level="project" />
   </component>
   <component name="POM File Configuration" pomFile="" />

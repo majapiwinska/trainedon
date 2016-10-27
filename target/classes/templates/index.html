@@ -31,9 +31,9 @@
     <div class="row">
             <div class="col-md-4" th:each="training : ${trainings}" style="cursor: pointer" th:onclick="'javascript:rowClicked(\''+${training.id}+'\');'">
                 <div class="card">
-                    <div class="card-title" th:text="${training.title}"></div>
-                    <div class="card-text" th:text="${training.trainer}"></div>
-                    <div class="card-text" th:text="${training.length}"></div>
+                    <div class="card-success card-title text-xs-center" th:text="${training.title}"></div>
+                    <div class="card-text  text-xs-center" th:text="${training.trainer}"></div>
+                    <div class="card-text  text-xs-center" th:text="${training.length}"></div>
                 </div>
             </div>
     </div>

@@ -21,29 +21,28 @@
 <script src="/startbootstrap-creative-gh-pages/js/creative.min.js"></script>
 <script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 
-<form  action="#" th:action="@{/delete}" th:object="${training}" th:method="delete">
-    <input type="hidden" name="_method" value="delete"/>
-    <table>
-        <tr>
-            <td>Id:</td>
-            <td><input type="text" th:field="*{id}"/> </td>
-        </tr>
-        <tr>
-            <td>Title:</td>
-            <td><input type="text" th:field="*{title}"/> </td>
-        </tr>
-        <tr>
-            <td>Trainer:</td>
-            <td><input type="text" th:field="*{trainer}"/></td>
-        </tr>
-        <tr>
-            <td>Time:</td>
-            <td><input type="text" th:field="*{length}"/></td>
-        </tr>
-    </table>
-    <input type="submit" th:value="Submit"/>
-</form>
-
+<div class="jumbotron">
+    <form  action="#" th:action="@{/delete}" th:object="${training}" th:method="delete">
+        <input type="hidden" name="_method" value="delete"/>
+        <div class="form-group" >
+            <label class="control-label">Id</label>
+            <input type="text" class="form-control" th:field="*{id}"/>
+        </div>
+        <div class="form-group" >
+            <label class="control-label">Title</label>
+            <input type="text" class="form-control" th:field="*{title}"/>
+        </div>
+        <div class="form-group" >
+            <label class="control-label">Trainer</label>
+            <input type="text" class="form-control" th:field="*{trainer}"/>
+        </div>
+        <div class="form-group" >
+            <label class="control-label">Time</label>
+            <input type="text" class="form-control" th:field="*{length}"/>
+        </div>
+        <input type="submit" th:value="Submit"/>
+    </form>
+</div>
 
 </body>
 </html>

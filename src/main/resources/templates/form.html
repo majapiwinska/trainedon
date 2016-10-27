@@ -2,62 +2,82 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Create training training</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <!--   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ -->   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
-    <link href="/resources/bootstrap-4.0.0-alpha.4/dist/css/bootstrap.css"
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"/>
+-->
+   <link href="/bootstrap-4.0.0-alpha.4/dist/css/bootstrap.css"
           th:href="@{/webjars/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css}"
           rel="stylesheet" media="screen"/>
+
+    <link href="/resources/MDB-Free/css/bootstrap.min.css"
+            th:href="@{/webjars/bootstrap-material-design/0.5.9/css/bootstrap.min.css}"  rel="stylesheet" media="screen"/>
+
+    <link href="/resources/MDB-Free/css/mdb.min.css"
+          th:href="@{/webjars/bootstrap-material-design/0.5.9/css/mdb.min.css}" rel="stylesheet" media="screen"/>
 
     <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
             th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
 
-    <link href="/startbootstrap-creative-gh-pages/css/creative.min.css" rel="stylesheet" media="screen"/>
+    <script>
+            $.material.init();
+    </script>
 
 </head>
 <body>
 
-<script src="http://code.jquery.com/jquery.js"></script>
-<script src="/startbootstrap-creative-gh-pages/js/creative.min.js"></script>
-<script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-
-<h1>Create training</h1>
-    <form  action="#" th:action="@{/form}" th:object="${training}" method="post">
+<div class="col-md-10">
+    <div class="jumbotron">
+        <h2>Create training</h2>
+            <form  action="#" th:action="@{/form}" th:object="${training}" method="post">
+                <div class="form-group label-floating" >
+                    <label class="control-label">Title</label>
+                    <input type="text" class="form-control" th:field="*{title}"/>
+                </div>
+                <div class="form-group label-floating" >
+                    <label class="control-label">Trainer</label>
+                    <input type="text" class="form-control" th:field="*{trainer}"/>
+                </div>
+                <div class="form-group label-floating" >
+                    <label class="control-label">Time</label>
+                    <input type="text" class="form-control" th:field="*{length}"/>
+                </div>
+                <div class="form-group label-floating" >
+                    <label class="control-label">Blocks</label>
+                    <input type="text" class="form-control" th:field="*{blocks}"/>
+                </div>
+                <button type="submit" class="btn btn-primary " th:value="Submit">Submit</button>
+            </form>
+    </div>
+</div>
+<div class="col-md-8">
+    <h2>Blocks</h2>
         <table>
             <tr>
-                <td>Title:</td>
-                <td><input type="text" th:field="*{title}"/> </td>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Time</th>
             </tr>
-            <tr>
-                <td>Trainer:</td>
-                <td><input type="text" th:field="*{trainer}"/></td>
-            </tr>
-            <tr>
-                <td>Time:</td>
-                <td><input type="text" th:field="*{length}"/></td>
-            </tr>
-            <tr>
-                <td>Blocks:</td>
-                <td><input type="text" th:field="*{blocks}"/></td>
+            <tr th:each="block : ${blocks}">
+                <td th:text="${block.id}">Id</td>
+                <td th:text="${block.title}">Title</td>
+                <td th:text="${block.description}">Description</td>
+                <td th:text="${block.minutes}">Time</td>
             </tr>
         </table>
-        <input type="submit" th:value="Submit"/>
-    </form>
+</div>
 
-<h2>Blocks</h2>
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Time</th>
-        </tr>
-        <tr th:each="block : ${blocks}">
-            <td th:text="${block.id}">Id</td>
-            <td th:text="${block.title}">Title</td>
-            <td th:text="${block.description}">Description</td>
-            <td th:text="${block.minutes}">Time</td>
-        </tr>
-    </table>
+<script src="http://code.jquery.com/jquery.js"></script>
 
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="/MDB-Free/js/tether.min.js"></script>
+<script src="/bootstrap-4.0.0-alpha.4/dist/js/bootstrap.min.js"></script>
+
+<script src="/MDB-Free/js/bootstrap.min.js"></script>
+
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="/MDB-Free/js/mdb.min.js"></script>
 </body>
 </html>
