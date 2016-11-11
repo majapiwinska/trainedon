@@ -2,15 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Trained on</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-
-    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
-            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
-
-    <link href="/resources/bootstrap-4.0.0-alpha.4/dist/css/bootstrap.css"
-             th:href="@{/webjars/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css}"
-             rel="stylesheet" media="screen"/>
-
+    <div th:include="model/header :: header"></div>
     <script>
         function rowClicked(value){
             location.href="/form/" + value;
@@ -20,9 +12,6 @@
 
 </head>
 <body>
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="/resources/startbootstrap-creative-gh-pages/js/creative.min.js"></script>
-   <script src="/resources/bootstrap-4.0.0-alpha.4/dist/js/bootstrap.min.js"></script>
 
     <div class="row">
         <h1>Trainings</h1>

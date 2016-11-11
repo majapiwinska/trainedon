@@ -33,7 +33,7 @@ public class TrainingController {
         Collection<Training> trainings = trainingService.findAll();
         model.addAttribute("trainings", trainings);
 
-        return "index";
+        return "/index";
     }
 
     @RequestMapping(
@@ -43,29 +43,29 @@ public class TrainingController {
     public String getTraining(Model model, @PathVariable("id") Long id){
         Training training = trainingService.findOne(id);
         model.addAttribute("training", training);
-        return "trainingresult";
+        return "/training/trainingresult";
 
     }
 
     @RequestMapping(value = "/form",
             method = RequestMethod.GET)
-    public String createTrainingView(@ModelAttribute Training training, Model model){
+    public String getCreateTrainingView(@ModelAttribute Training training, Model model){
 
         Collection<Block> blocks = blockService.findAll();
         model.addAttribute("blocks", blocks);
-        return "form";    }
+        return "/form";    }
 
 
     @RequestMapping(
             value = "/form",
             method = RequestMethod.POST
     )
-    public String createTraining(Training training, Model model){
+    public String handleCreateTrainingForm(Training training, Model model){
 
         Training savedTraining = trainingService.create(training);
 
         model.addAttribute("training", savedTraining);
-        return "trainingresult";
+        return "/training/trainingresult";
 
     }
 
@@ -88,46 +88,46 @@ public class TrainingController {
             value = "/update/{id}",
             method = RequestMethod.GET
     )
-    public String updateTrainingView(Model model, @PathVariable("id") Long id){
+    public String getUpdateTrainingView(Model model, @PathVariable("id") Long id){
         Training updatedTraining = trainingService.findOne(id);
         model.addAttribute("training", updatedTraining);
-        return "updateform";    }
+        return "/training/updateform";    }
 
     @RequestMapping(
             value = "/update",
             method = RequestMethod.POST
     )
-    public String updateTraining(Training training, Model model){
+    public String handleUpdateTrainingForm(Training training, Model model){
 
         Training updatedTraining = trainingService.update(training);
         model.addAttribute("training", updatedTraining);
         if(updatedTraining == null){
             return "There's no such training session!";
         }
-        return "trainingresult";
+        return "/training/trainingresult";
     }
 
     @RequestMapping(
             value = "/delete/{id}",
             method = RequestMethod.GET
     )
-    public String deleteForm(@PathVariable("id") Long id, Model model){
+    public String getDeleteTrainingView(@PathVariable("id") Long id, Model model){
         Training deleteTraining = trainingService.findOne(id);
         model.addAttribute("training", deleteTraining);
 
-        return "deleteform";
+        return "/training/deleteform";
     }
 
     @RequestMapping(
             value = "/delete",
             method = RequestMethod.DELETE
     )
-    public String deleteTraining(Training training, Model model){
+    public String handleDeleteTrainingForm(Training training, Model model){
          Long id = training.getId();
          trainingService.delete(id);
         Collection<Training> trainings = trainingService.findAll();
         model.addAttribute("trainings", trainings);
-        return "index";
+        return "/index";
     }
 
 

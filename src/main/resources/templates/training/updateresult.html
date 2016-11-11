@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>Updated training session</title>
+    <div th:include="model/header :: header"></div>
+
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>training Name</th>
+        <th>Trainer</th>
+        <th>Time</th>
+    </tr>
+    <tr>
+        <td th:text="${training.id}">Id</td>
+        <td th:text="${training.title}">training Name</td>
+        <td th:text="${training.trainer}">Trainer</td>
+        <td th:text="${training.length}">Time</td>
+    </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>Block</title>
+    <div th:include="model/header :: header"></div>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Time</th>
+    </tr>
+    <tr>
+
+        <td th:text="${block.id}">Id</td>
+        <td th:text="${block.title}">Title</td>
+        <td th:text="${block.description}">Description</td>
+        <td th:text="${block.minutes}">Time</td>
+    </tr>
+</table>
+
+</body>
+</html>

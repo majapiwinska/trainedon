@@ -28,7 +28,7 @@ public class BlockController {
     public String getBlocks(Model model){
         Collection<Block> blocks = blockService.findAll();
         model.addAttribute("blocks", blocks);
-        return "blocks";
+        return "/block/blocks";
             }
 
     @RequestMapping(
@@ -38,27 +38,27 @@ public class BlockController {
     public String getBlock(Model model, @PathVariable("id") Long id){
         Block block = blockService.findOne(id);
         model.addAttribute("block", block );
-        return "blockresult";
+        return "/block/blockresult";
     }
 
     @RequestMapping(
             value = "/blockForm",
             method = RequestMethod.GET
     )
-    public String createBlockView(@ModelAttribute Block block){
+    public String getCreateBlockView(@ModelAttribute Block block){
 
-        return "blockForm";
+        return "/block/blockForm";
     }
 
     @RequestMapping(
             value = "/blockForm",
             method = RequestMethod.POST
     )
-    public String createBlock(Block block, Model model){
+    public String handleCreateBlockForm(Block block, Model model){
 
         Block savedBlock= blockService.create(block);
         model.addAttribute("block", savedBlock);
-        return "blockresult";
+        return "/block/blockresult";
 
     }
 
@@ -68,10 +68,10 @@ public class BlockController {
             value = "/update/block/{id}",
             method = RequestMethod.GET
     )
-    public String updateBlockForm(Model model, @PathVariable("id") Long id){
+    public String getUdateBlockView(Model model, @PathVariable("id") Long id){
         Block updatedBlock = blockService.findOne(id);
         model.addAttribute("block", updatedBlock);
-        return "update_block";
+        return "/block/update_block";
 
 
     }
@@ -80,37 +80,37 @@ public class BlockController {
             value = "/update_block",
             method = RequestMethod.POST
     )
-    public String updateBlock(Block block, Model model){
+    public String handleUpdateBlockForm(Block block, Model model){
 
         Block updatedBlock = blockService.update(block);
         model.addAttribute("block", updatedBlock);
         if(updatedBlock == null){
             return "There's no such training session!";
         }
-        return "blockresult";
+        return "/block/blockresult";
     }
 
     @RequestMapping(
             value = "/delete/block/{id}",
             method = RequestMethod.GET
     )
-    public String deleteForm(@PathVariable("id") Long id, Model model){
+    public String getDeleteBlockView(@PathVariable("id") Long id, Model model){
         Block deleteBlock = blockService.findOne(id);
         model.addAttribute("block", deleteBlock);
 
-        return "delete_block_form";
+        return "/block/delete_block_form";
     }
 
     @RequestMapping(
             value = "/delete_block",
             method = RequestMethod.DELETE
     )
-    public String deleteBlock(Block block, Model model){
+    public String handleDeleteBlockForm(Block block, Model model){
         Long id = block.getId();
         blockService.delete(id);
         Collection<Block> blocks = blockService.findAll();
         model.addAttribute("blocks", blocks);
-        return "blocks";
+        return "/block/blocks";
     }
 
 }

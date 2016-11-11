@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Trained on - blocks</title>
+    <div th:include="model/header :: header"></div>
+</head>
+<body>
+
+<div class="row">
+    <h1>Blocks</h1>
+</div>
+<div class="row">
+    <div class="col-md-4"  th:each="block : ${blocks}">
+        <div class="card">
+            <div class="card-title" th:text="${block.title}"></div>
+            <div class="card-subtitle" th:text="${block.id}"></div>
+            <div class="card-text" th:text="${block.description}"></div>
+            <div class="card-text" th:text="${block.minutes}"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -2,24 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Create training training</title>
- <!--   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
- -->   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"/>
--->
-   <link href="/bootstrap-4.0.0-alpha.4/dist/css/bootstrap.css"
-          th:href="@{/webjars/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css}"
-          rel="stylesheet" media="screen"/>
-
-    <link href="/resources/MDB-Free/css/bootstrap.min.css"
-            th:href="@{/webjars/bootstrap-material-design/0.5.9/css/bootstrap.min.css}"  rel="stylesheet" media="screen"/>
-
-    <link href="/resources/MDB-Free/css/mdb.min.css"
-          th:href="@{/webjars/bootstrap-material-design/0.5.9/css/mdb.min.css}" rel="stylesheet" media="screen"/>
-
-    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
-            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
-
+    <div th:include="model/header :: header"></div>
     <script>
             $.material.init();
     </script>
@@ -69,15 +52,5 @@
         </table>
 </div>
 
-<script src="http://code.jquery.com/jquery.js"></script>
-
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="/MDB-Free/js/tether.min.js"></script>
-<script src="/bootstrap-4.0.0-alpha.4/dist/js/bootstrap.min.js"></script>
-
-<script src="/MDB-Free/js/bootstrap.min.js"></script>
-
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="/MDB-Free/js/mdb.min.js"></script>
 </body>
 </html>
