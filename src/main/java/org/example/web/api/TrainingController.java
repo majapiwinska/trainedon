@@ -2,13 +2,19 @@ package org.example.web.api;
 
 import org.example.ws.model.Block;
 import org.example.ws.model.Training;
+import org.example.ws.model.User;
 import org.example.ws.service.BlockService;
 import org.example.ws.service.TrainingService;
+import org.example.ws.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.security.Principal;
 import java.util.Collection;
 
 /**
@@ -22,10 +28,11 @@ public class TrainingController {
     private TrainingService trainingService;
     @Autowired
     private BlockService blockService;
-
+    @Autowired
+    private UserService userService;
 
     @RequestMapping(
-            value = "/api/trainings",
+            value = "/allTrainings",
             method = RequestMethod.GET
     )
     public String getTrainings(Model model){
@@ -33,11 +40,11 @@ public class TrainingController {
         Collection<Training> trainings = trainingService.findAll();
         model.addAttribute("trainings", trainings);
 
-        return "/index";
+        return "/allTrainings";
     }
 
     @RequestMapping(
-            value = "/form/{id}",
+            value = "/training/{id}",
             method = RequestMethod.GET
     )
     public String getTraining(Model model, @PathVariable("id") Long id){
@@ -47,13 +54,17 @@ public class TrainingController {
 
     }
 
-    @RequestMapping(value = "/form",
+    @RequestMapping(value = "/form/{userId}",
             method = RequestMethod.GET)
-    public String getCreateTrainingView(@ModelAttribute Training training, Model model){
+    public String getCreateTrainingView(@ModelAttribute Training training, Model model, @PathVariable("userId") Long userId){
+        User user  = userService.findUserById(userId);
 
         Collection<Block> blocks = blockService.findAll();
+
+        model.addAttribute("user", user);
         model.addAttribute("blocks", blocks);
-        return "/form";    }
+        return "/form";
+    }
 
 
     @RequestMapping(
@@ -61,9 +72,11 @@ public class TrainingController {
             method = RequestMethod.POST
     )
     public String handleCreateTrainingForm(Training training, Model model){
-
+        String userEmail = training.getTrainer();
+        User user = userService.findUserByEmail(userEmail);
+        training.setUser(user);
         Training savedTraining = trainingService.create(training);
-
+        userService.addTrainingToUser(user, training);
         model.addAttribute("training", savedTraining);
         return "/training/trainingresult";
 
@@ -81,7 +94,7 @@ public class TrainingController {
         model.addAttribute("block", savedBlock);
         model.addAttribute("training", savedTraining);
 
-        return "redirect:/form/"+trainingId;
+        return "redirect:/training/"+trainingId;
     };
 
     @RequestMapping(
@@ -127,9 +140,17 @@ public class TrainingController {
          trainingService.delete(id);
         Collection<Training> trainings = trainingService.findAll();
         model.addAttribute("trainings", trainings);
-        return "/index";
+        return "/allTrainings";
     }
 
 
+    @RequestMapping(
+            value = "/principal",
+            method = RequestMethod.GET
+    )
+    public String myTrainings(Model model, Principal principal){
+
+        return "/myTrainings";
+    };
 
 }

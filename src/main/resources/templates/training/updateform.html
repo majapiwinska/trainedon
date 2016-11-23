@@ -6,6 +6,7 @@
 
 </head>
 <body>
+<div th:include="model/topMenu :: topMenu"></div>
 
 <div class="jumbotron">
     <form  action="#" th:action="@{/update}" th:object="${training}" method="post">

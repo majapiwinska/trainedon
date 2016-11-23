@@ -4,12 +4,15 @@ import org.example.ws.model.Block;
 import org.example.ws.model.Training;
 import org.example.ws.repository.BlockRepository;
 import org.example.ws.repository.TrainingRepository;
+import org.example.ws.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.security.Principal;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by maja on 06.09.16.
@@ -24,6 +27,8 @@ public class TrainingServiceBean implements TrainingService {
    @Autowired
    private BlockRepository blockRepository;
 
+    @Autowired
+    private UserRepository userRepository;
    //
    @Autowired
    private TrainingRepository trainingRepository;
@@ -84,4 +89,16 @@ public class TrainingServiceBean implements TrainingService {
         training.getBlocks().add(block);
         return trainingRepository.save(training);
     }
+
+
+    @Override
+    @Transactional (propagation = Propagation.REQUIRED,
+            readOnly = false)
+    public List<Training> findTrainingsByUserId(Principal principal) {
+        String tmpName = principal.getName();
+    return null;
+    }
+
+
+
 }

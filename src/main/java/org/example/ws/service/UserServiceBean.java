@@ -1,6 +1,8 @@
 package org.example.ws.service;
 
+import org.example.ws.model.Training;
 import org.example.ws.model.User;
+import org.example.ws.repository.TrainingRepository;
 import org.example.ws.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -22,6 +24,9 @@ public class UserServiceBean implements UserService{
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private TrainingRepository trainingRepository;
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED,
@@ -98,4 +103,14 @@ public class UserServiceBean implements UserService{
        userRepository.delete(id);
 
     }
+
+    @Override
+    @Transactional (propagation = Propagation.REQUIRED,
+            readOnly = false)
+    public User addTrainingToUser(User user, Training training){
+        if(trainingRepository.findOne(training.getId()) == null || userRepository.findOne(user.getId()) == null)
+            return null;
+        user.getTrainingList().add(training);
+        return userRepository.save(user);
+    };
 }

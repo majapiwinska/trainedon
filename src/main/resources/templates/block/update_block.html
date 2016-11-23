@@ -5,6 +5,7 @@
     <div th:include="model/header :: header"></div>
 </head>
 <body>
+<div th:include="model/topMenu :: topMenu"></div>
 
 <div class="jumbotron">
     <form  action="#" th:action="@{/update_block}" th:object="${block}" method="post">

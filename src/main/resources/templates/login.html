@@ -9,6 +9,7 @@
 <div class="col-md-8">
     <div class="jumbotron">
         <form role="form" th:action="@{/login}" th:object="${user}" method="post">
+
             <div class="form-group label-floating">
                 <label class="control-label">Email</label>
                 <input type="email" th:field="*{email}"/>

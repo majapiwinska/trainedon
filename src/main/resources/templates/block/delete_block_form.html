@@ -6,6 +6,7 @@
     <div th:include="model/header :: header"></div>
 </head>
 <body>
+<div th:include="model/topMenu :: topMenu"></div>
 
 <div class="jumbotron">
     <form  action="#" th:action="@{/delete_block}" th:object="${block}" th:method="delete">

@@ -1,5 +1,6 @@
 package org.example.ws.service;
 
+import org.example.ws.model.Training;
 import org.example.ws.model.User;
 
 import java.util.Collection;
@@ -20,4 +21,6 @@ public interface UserService {
     User update(User user);
 
     void delete(Long id);
+
+    User addTrainingToUser(User user, Training training);
 }

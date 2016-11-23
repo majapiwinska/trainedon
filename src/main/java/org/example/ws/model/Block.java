@@ -9,31 +9,26 @@ import java.util.List;
  * Created by maja on 07.09.16.
  */
 @Entity
-@Table(name="block")
 public class Block {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "block_id")
     private Long id;
 
     @NotNull
-    @Column(name = "title")
     private String title;
 
-    @Column(name = "description")
     private String description;
 
 
     @NotNull
-    @Column(name = "minutes")
     private int minutes;
 
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
              name="training_block",
-             joinColumns = {@JoinColumn(name = "block_id", referencedColumnName = "block_id")},
+             joinColumns = {@JoinColumn(name = "block_id", referencedColumnName = "id")},
              inverseJoinColumns = {@JoinColumn(name = "training_id", referencedColumnName = "id")})
     private List<Training> trainings = new ArrayList<Training>();
 
@@ -42,10 +37,11 @@ public class Block {
 
     public Block(){};
 
-    public Block(String title, String description, int minutes){
+    public Block(String title, String description, int minutes, List<Training> trainings){
         this.title = title;
         this.description = description;
         this.minutes = minutes;
+        this.trainings = trainings;
     }
 
     public String getTitle() {

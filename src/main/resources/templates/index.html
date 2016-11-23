@@ -3,6 +3,8 @@
 <head>
     <title>Trained on</title>
     <div th:include="model/header :: header"></div>
+    <link rel="stylesheet" type="text/css" href="/static/style/style.css"/>
+
     <script>
         function rowClicked(value){
             location.href="/form/" + value;
@@ -12,37 +14,14 @@
 
 </head>
 <body>
+<div th:include="model/indexMenu :: indexMenu"></div>
 
-    <div class="row">
-        <h1>Trainings</h1>
-    </div>
+    <div class="col-md-12">
+        <div class="jumbotron jumbotron-fluid jumbotron-homepage">
 
-    <div class="row">
-            <div class="col-md-4" th:each="training : ${trainings}" style="cursor: pointer" th:onclick="'javascript:rowClicked(\''+${training.id}+'\');'">
-                <div class="card">
-                    <div class="card-success card-title text-xs-center" th:text="${training.title}"></div>
-                    <div class="card-text  text-xs-center" th:text="${training.trainer}"></div>
-                    <div class="card-text  text-xs-center" th:text="${training.length}"></div>
-                </div>
-            </div>
+
     </div>
+</div>
 </body>
 </html>
-<!--
 
-<table>
-    <tr>
-        <th>Id</th>
-        <th>training Name</th>
-        <th>Trainer</th>
-        <th>Time</th>
-    </tr>
-    <tr th:each="training : ${trainings}" style="cursor: pointer"
-        th:onclick="'javascript:rowClicked(\''+${training.id}+'\');'">
-
-        <td th:text="${training.id}">Id</td>
-        <td th:text="${training.title}">training Name</td>
-        <td th:text="${training.trainer}">Trainer</td>
-        <td th:text="${training.length}">Time</td>
-    </tr>
-</table>-->

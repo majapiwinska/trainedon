@@ -1,6 +1,8 @@
 package org.example.ws.model;
 
 
+import com.sun.istack.internal.Nullable;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -10,7 +12,6 @@ import java.util.List;
  * Created by maja on 30.08.16.
  */
 @Entity
-@Table(name = "session")
 public class Training {
 
     @Id
@@ -18,35 +19,33 @@ public class Training {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "session_name")
-    @NotNull
+
+    @Nullable
     private String title;
 
-    @Column(name = "trainer")
     @NotNull
     private String trainer;
 
-    @Column(name = "length")
     @NotNull
     private int length;
 
 
-    @Column(name = "userId")
-    @NotNull
-    private int userId;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(
             name="training_block",
             joinColumns = {@JoinColumn(name = "training_id", referencedColumnName = "id")},
-            inverseJoinColumns = {@JoinColumn(name = "block_id", referencedColumnName = "block_id")})
+            inverseJoinColumns = {@JoinColumn(name = "block_id", referencedColumnName = "id")})
    private List<Block> blocks = new ArrayList<Block>() {
     };
 
 
     public Training(){}
 
-    public Training(String title, String trainer, List<Block> blocks, Block block, int userId){
+    public Training(String title, String trainer, List<Block> blocks, Block block, Long userId, int length, User user){
 
         this.title = title;
 
@@ -54,9 +53,9 @@ public class Training {
 
         this.blocks = blocks;
 
-        this.userId = userId;
+        this.length = length;
 
-
+        this.user = user;
     }
 
 
@@ -100,11 +99,12 @@ public class Training {
         this.blocks = blocks;
     }
 
-    public int getUserId() {
-        return userId;
+
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

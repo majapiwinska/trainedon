@@ -1,52 +1,59 @@
 package org.example.ws.model;
 
+import com.sun.istack.internal.Nullable;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by maja on 19.10.16.
  */
 
 @Entity
-@Table(name = "user")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
     private Long id;
 
     @NotNull
-    @Column(name = "first_name")
     private String firstName;
 
     @NotNull
-    @Column(name = "last_name")
     private String lastName;
 
     @NotNull
-    @Column(name = "email")
     private String email;
 
     @NotNull
-    @Column(name = "password")
     private String password;
 
-    @Column(name = "role")
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    @OneToMany
+    @JoinTable(
+            name = "user_training",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "training_id")})
+    @Nullable
+    private List<Training> trainingList = new ArrayList<Training>();
 
     public enum Role {
         USER, ADMIN
     }
     public User(){};
 
-    public User(String firstName, String lastName, String email, String password, Role role) {
+    public User(String firstName, String lastName, String email, String password, Role role, List<Training> trainingList) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.role = role;
+        this.trainingList = trainingList;
+
     }
 
     public Long getId() {
@@ -95,6 +102,14 @@ public class User {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public List<Training> getTrainingList() {
+        return trainingList;
+    }
+
+    public void setTrainingList(List<Training> trainingList) {
+        this.trainingList = trainingList;
     }
 }
 
