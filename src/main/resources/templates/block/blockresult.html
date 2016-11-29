@@ -23,6 +23,13 @@
         <td th:text="${block.minutes}">Time</td>
     </tr>
 </table>
+<div  class="col-md-12 ui-state-default"  th:each="block : ${training.blocks}">
+        <div class=" col-md-12 card-success card-title text-center" th:text="${block.title}"></div>
+        <div class="col-md-12 card-subtitle text-center" th:text="${block.category}"></div>
+        <div class="col-md-2 card-subtitle text-center " th:text="${block.id}"></div>
+        <div class="card-text col-md-8 text-center" th:text="${block.description}"></div>
+        <div class="card-text col-md-2 text-center" th:text="${block.minutes}"></div>
+</div>
 
 </body>
 </html>

@@ -1,5 +1,7 @@
 package org.example.ws.model;
 
+import com.sun.istack.internal.Nullable;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -20,10 +22,12 @@ public class Block {
 
     private String description;
 
-
     @NotNull
     private int minutes;
 
+    @Nullable
+    @Enumerated(EnumType.STRING)
+    private Category category;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
@@ -37,11 +41,16 @@ public class Block {
 
     public Block(){};
 
-    public Block(String title, String description, int minutes, List<Training> trainings){
+    public Block(String title, String description, int minutes, List<Training> trainings, Category category){
         this.title = title;
         this.description = description;
         this.minutes = minutes;
         this.trainings = trainings;
+        this.category = category;
+    }
+
+    public enum Category{
+        THEORY, EXERCISE, DISCUSSION, DEBRIEFING, ENERGIZER, BREAK
     }
 
     public String getTitle() {
@@ -82,6 +91,14 @@ public class Block {
 
     public void setTrainings(List<Training> trainings) {
         this.trainings = trainings;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     /*public List<Training> getTrainingList() {

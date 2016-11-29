@@ -26,6 +26,7 @@ public interface TrainingService {
 
     List<Training> findTrainingsByUserId(Principal principal);
 
+    Collection<Training> findByTags(String tag);
 
 }
 

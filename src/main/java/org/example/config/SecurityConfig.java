@@ -38,7 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/index","/logout","/user/**","/api/**", "/form/**", "/static/**", "/bootstrap/**","/dist/css/**", "jquery/**", "/style/**").permitAll()
+                .antMatchers("/index","/logout","/user/**","/api/**", "/form/**", "/search", "/searchResult","/static/**", "model/**", "/topMenu", "/style/**").permitAll()
                 .anyRequest().permitAll()
 //                .antMatchers("/user/**").hasAuthority("USER")
 //                .anyRequest().permitAll()
@@ -56,7 +56,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                     .logoutSuccessUrl("/index")
                     .permitAll()
                 .and()
-                .rememberMe();
+                    .rememberMe()
+                .and()
+                    .csrf().disable();
     }
 }
 

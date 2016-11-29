@@ -9,10 +9,7 @@ import org.example.ws.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.util.Collection;
@@ -151,6 +148,17 @@ public class TrainingController {
     public String myTrainings(Model model, Principal principal){
 
         return "/myTrainings";
-    };
+    }
 
+    @RequestMapping(
+            value = "/search",
+            method = RequestMethod.POST
+    )
+    public String handleFindTrainingsByTagFom(Model model, String tag){
+        System.out.println(tag);
+
+        Collection<Training> trainings = trainingService.findByTags(tag);
+        model.addAttribute("trainings", trainings);
+        return "/searchResult";
+    }
 }

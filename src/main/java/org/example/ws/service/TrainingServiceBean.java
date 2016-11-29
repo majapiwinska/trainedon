@@ -99,6 +99,15 @@ public class TrainingServiceBean implements TrainingService {
     return null;
     }
 
+    @Override
+    public Collection<Training> findByTags(String tag) {
+        Collection<Training> trainings = trainingRepository.findByTags(tag);
+        if(trainings == null) {
+            System.out.print("There's no training tagged with " + tag);
+
+        }
+        return trainings;
+    }
 
 
 }

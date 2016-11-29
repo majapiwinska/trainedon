@@ -22,6 +22,17 @@
             <input type="text" class="form-control" th:field="*{minutes}"/>
             </tr>
         </div>
+        <div class="form-group label-floating">
+            <label class="control-label">Category</label>
+            <select class="form-control" th:field="*{category}">
+                <option value="THEORY">theory</option>
+                <option value="EXERCISE">exercise</option>
+                <option value="DISCUSSION">discussion</option>
+                <option value="DEBRIEFING">debriefing</option>
+                <option value="ENERGIZER">energizer</option>
+                <option value="BREAK">break</option>
+            </select>
+        </div>
         <input type="submit" th:value="Submit"/>
     </form>
 </div>

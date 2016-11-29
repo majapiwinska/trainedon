@@ -16,7 +16,6 @@ public class Training {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
     private Long id;
 
 
@@ -29,6 +28,9 @@ public class Training {
     @NotNull
     private int length;
 
+    @Nullable
+    @ElementCollection(targetClass = String.class)
+    private List<String> tags = new ArrayList<String>();
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -45,17 +47,22 @@ public class Training {
 
     public Training(){}
 
-    public Training(String title, String trainer, List<Block> blocks, Block block, Long userId, int length, User user){
+    public Training(String title, String trainer, List<Block> blocks, Block block, Long userId, int length, User user, List<String> tags){
 
         this.title = title;
 
         this.trainer = trainer;
+
+
+
 
         this.blocks = blocks;
 
         this.length = length;
 
         this.user = user;
+
+        this.tags = tags;
     }
 
 
@@ -106,5 +113,13 @@ public class Training {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
     }
 }
