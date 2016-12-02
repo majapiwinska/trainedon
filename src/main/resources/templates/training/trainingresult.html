@@ -5,48 +5,48 @@
     <title>Created training session</title>
     <div th:include="model/header :: header"></div>
 
- <!--   <script>
-        function createBlock(){
-            document.getElementById("newBlock").style.display="block";
-        }
-    </script>-->
-    <script type="text/javascript">
-        jQuery.fn.swap = function(b){
-            // method from: http://blog.pengoworks.com/index.cfm/2008/9/24/A-quick-and-dirty-swap-method-for-jQuery
-            b = jQuery(b)[0];
-            var a = this[0];
-            var t = a.parentNode.insertBefore(document.createTextNode(''), a);
-            b.parentNode.insertBefore(a, b);
-            t.parentNode.insertBefore(b, t);
-            t.parentNode.removeChild(t);
-            return this;
-        };
 
+    <script type="text/javascript" >
+        $(document).ready(function () {
+            $("#saveChangesButton").click( function (){
+                var blocks = $(this).attr('updated-blocks');
+                var id = $(this).attr('training-id');
+                var page =  '/saveChanges/' + id;
 
-        $( ".card" ).draggable({ revert: true, helper: "clone" });
+                $.ajax({
+                    url: page,
+                    type: 'POST',
+                    data: blocks,
+                    success: function (data) {
 
-        $( ".card" ).droppable({
-            accept: ".card",
-            activeClass: "ui-state-hover",
-            hoverClass: "ui-state-active",
-            drop: function( event, ui ) {
-
-                var draggable = ui.draggable, droppable = $(this),
-                        dragPos = draggable.position(), dropPos = droppable.position();
-
-                draggable.css({
-                    left: dropPos.left+'px',
-                    top: dropPos.top+'px'
+                    }
                 });
+            });
 
-                droppable.css({
-                    left: dragPos.left+'px',
-                    top: dragPos.top+'px'
-                });
-                draggable.swap(droppable);
-            }
+            $("#sortable").sortable({
+                start: function (event, ui) {
+                    var startPos = ui.item.index();
+                    ui.item.data('startPos', startPos);
+                    console.log("start position: " + startPos);
+                },
+                update: function (event, ui) {
+                    var updatePos = ui.item.index();
+                    ui.item.data('updatePos', updatePos);
+                    console.log("updated position: " + updatePos);
+                    getBlockIndex(updatePos);
+
+                } 
+            });
+
+            $("#listElement").each(function () {
+
+            })
+
         });
+
+
     </script>
+
 
 </head>
 <body>
@@ -71,16 +71,20 @@
 
         </tr>
     </table>
-    <div  class="col-md-12 ui-state-default"  th:each="block : ${training.blocks}">
-        <ul id="items" class="card ">
-            <li>
+    <div  class="col-md-12">
+        <ul id="sortable" class="ui-sortable list-group">
+            <li id="listElement" class="card ui-state-default list-group-item" th:each="block : ${training.blocks}" >
                 <div class=" col-md-12 card-success card-title text-center" th:text="${block.title}"></div>
                 <div class="col-md-12 card-subtitle text-center" th:text="${block.category}"></div>
                 <div class="col-md-2 card-subtitle text-center " th:text="${block.id}"></div>
                 <div class="card-text col-md-8 text-center" th:text="${block.description}"></div>
                 <div class="card-text col-md-2 text-center" th:text="${block.minutes}"></div>
+
+                <!--block_id={} order=-->
+                <!--<div class="card-text col-md-2 text-center" th:text="${block.order}"></div>-->
             </li>
         </ul>
+        <button id="saveChangesButton" th:attr="updated-blocks=${training.blocks}, training-id=${training.id}" >Save changes</button>
     </div>
 
 <!--    <button onclick="createBlock()">Create new block</button>-->
@@ -117,6 +121,23 @@
     </form>
 </div>
 
+
 </body>
+
+
 </html>
 
+<!--
+/*,
+change: function (event, ui) {
+var startPos = ui.item.data('startPos');
+var index = ui.placeholder.index;
+if (startPos < index) {
+$('#sortable li:nth-child(' + index + ')').addClass('list-group-item-success');
+} else {
+$('#sortable li:eq(' + (index + 1) + ')').addClass('list-group-item-success');
+}
+},
+update: function (event, ui) {
+$('#soratable li').removeClass('list-group-item-success');
+}*/-->

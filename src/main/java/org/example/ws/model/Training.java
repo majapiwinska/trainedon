@@ -36,24 +36,24 @@ public class Training {
     @JoinColumn(name = "user_id")
     private User user;
 
+
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(
             name="training_block",
             joinColumns = {@JoinColumn(name = "training_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "block_id", referencedColumnName = "id")})
-   private List<Block> blocks = new ArrayList<Block>() {
+    @OrderColumn(updatable = true)
+    private List<Block> blocks = new ArrayList<Block>() {
     };
 
 
     public Training(){}
 
-    public Training(String title, String trainer, List<Block> blocks, Block block, Long userId, int length, User user, List<String> tags){
+    public Training(String title, String trainer, List<Block> blocks, int length, User user, List<String> tags){
 
         this.title = title;
 
         this.trainer = trainer;
-
-
 
 
         this.blocks = blocks;

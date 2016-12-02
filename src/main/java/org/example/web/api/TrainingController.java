@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by maja on 30.08.16.
@@ -160,5 +161,20 @@ public class TrainingController {
         Collection<Training> trainings = trainingService.findByTags(tag);
         model.addAttribute("trainings", trainings);
         return "/searchResult";
+    }
+
+
+    @RequestMapping(
+            value = "/saveChanges/{id}",
+            method = RequestMethod.POST
+    )
+    public String changeBlocksOrderInTraining(@RequestBody List<Block> blockList, Model model, @PathVariable("id") Long trainingId){
+        Training training = trainingService.findOne(trainingId);
+        training.setBlocks(blockList);
+        trainingService.update(training);
+
+        model.addAttribute("blocks", blockList);
+        model.addAttribute("training", training);
+        return "/training/trainingresult";
     }
 }
