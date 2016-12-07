@@ -7,6 +7,8 @@ import org.example.ws.service.BlockService;
 import org.example.ws.service.TrainingService;
 import org.example.ws.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +20,7 @@ import java.util.List;
 /**
  * Created by maja on 30.08.16.
  */
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 @Controller
 public class TrainingController {
 
@@ -72,6 +75,8 @@ public class TrainingController {
     public String handleCreateTrainingForm(Training training, Model model){
         String userEmail = training.getTrainer();
         User user = userService.findUserByEmail(userEmail);
+        //user.getRoles().add("ROLE_OWNER");
+        userService.update(user);
         training.setUser(user);
         Training savedTraining = trainingService.create(training);
         userService.addTrainingToUser(user, training);
@@ -84,7 +89,9 @@ public class TrainingController {
             value = "/new_block/{trainingId}",
             method = RequestMethod.POST
     )
+    @PreAuthorize("hasRole('ROLE_USER')")
     public String createBlockAndAddToTraining(Block block, Model model, @PathVariable("trainingId") Long trainingId){
+
         Block savedBlock = blockService.create(block);
         Training training = trainingService.findOne(trainingId);
         Training savedTraining = trainingService.addBlockToTraining(block, training);

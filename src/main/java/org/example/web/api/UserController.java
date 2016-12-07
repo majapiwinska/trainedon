@@ -39,11 +39,11 @@ public class UserController {
             method = RequestMethod.POST,
             value = "/createUser"
     )
-    public String handleUserCreateForm(User user, Model model){
+    public String handleUserCreateForm(User user, Model model, Principal principal){
 
         User createdUser = userService.create(user);
         model.addAttribute("user", createdUser);
-        return "/user/userResult";
+        return "/user/userPage";
     }
 
     //ma wyswietlic usera

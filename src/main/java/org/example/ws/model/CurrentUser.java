@@ -2,6 +2,8 @@ package org.example.ws.model;
 
 import org.springframework.security.core.authority.AuthorityUtils;
 
+import java.util.List;
+
 /**
  * Created by maja on 26.10.16.
  */
@@ -10,7 +12,7 @@ public class CurrentUser extends  org.springframework.security.core.userdetails.
     private User user;
 
     public CurrentUser(User user){
-        super(user.getEmail(), user.getPassword(), AuthorityUtils.createAuthorityList(user.getRole().toString()));
+        super(user.getEmail(), user.getPassword(), AuthorityUtils.createAuthorityList(user.getRoles().toString()));
         this.user = user;
 
     }
@@ -23,7 +25,6 @@ public class CurrentUser extends  org.springframework.security.core.userdetails.
         return user.getId();
     }
 
-    public User.Role getRole(){
-        return user.getRole();
+    public List<String> getRoles(){return user.getRoles();
     }
 }

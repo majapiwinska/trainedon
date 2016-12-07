@@ -3,25 +3,46 @@
 <head>
     <title>Trained on</title>
     <div th:include="model/header :: header"></div>
-    <link rel="stylesheet" type="text/css" href="/static/style/style.css"/>
-
-    <script>
-        function rowClicked(value){
-            location.href="/form/" + value;
-        }
-    </script>
-
-
 </head>
 <body>
+
+<!--
 <div th:include="model/indexMenu :: indexMenu"></div>
+-->
 
     <div class="col-md-12">
         <div class="jumbotron jumbotron-fluid jumbotron-homepage">
+            <div class="container ca-margin-top-50px">
+                <h1 style="color: white">Trainer's place</h1>
+                <p style="font-size: large; color: white ">Dość żmudnego planowania szkoleń w arkuszach.</p>
+                <p style="font-size: large; color: white">Dzięki aplikacji <strong>Trainer's place</strong> masz możliwość szybko i intuicyjnie zaprojektować szkolenie. Tak
+                    prosto nie było jeszcze nigdy.</p>
+                <div class="row ca-margin-top-100px">
+                    <button id="signInButton" class="btn btn-raised btn-primary pull-right" >Sign up</button>
+                    <button id="logInButton" class="btn  btn-primary pull-right" >Log In</button>
+                </div>
+            </div>
 
 
     </div>
 </div>
+
+<script>
+    function rowClicked(value){
+        location.href="/form/" + value;
+    }
+
+    $(document).ready(function () {
+        $("#signInButton").click(function () {
+            window.location.href="/createUser";
+        });
+        $("#logInButton").click(function () {
+            window.location.href="/login"
+        })
+
+    })
+</script>
+
 </body>
 </html>
 

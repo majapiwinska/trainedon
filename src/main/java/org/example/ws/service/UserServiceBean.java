@@ -77,7 +77,7 @@ public class UserServiceBean implements UserService{
         createdUser.setLastName(user.getLastName());
         createdUser.setEmail(user.getEmail());
         createdUser.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
-        createdUser.setRole(user.getRole());
+        createdUser.setRoles(user.getRoles());
         return userRepository.save(createdUser);
 
     }

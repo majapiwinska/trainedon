@@ -30,8 +30,8 @@ public class User {
     @NotNull
     private String password;
 
-    @Enumerated(EnumType.STRING)
-    private Role role;
+    @ElementCollection(targetClass = String.class, fetch = FetchType.EAGER)
+    private List<String> roles = new ArrayList<String>();
 
     @OneToMany
     @JoinTable(
@@ -41,17 +41,18 @@ public class User {
     @Nullable
     private List<Training> trainingList = new ArrayList<Training>();
 
-    public enum Role {
-        USER, ADMIN
-    }
+
+   /* public enum Role {
+        USER, ADMIN, OWNER
+    }*/
     public User(){};
 
-    public User(String firstName, String lastName, String email, String password, Role role, List<Training> trainingList) {
+    public User(String firstName, String lastName, String email, String password, List<String> roles, List<Training> trainingList) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.role = role;
+        this.roles = roles;
         this.trainingList = trainingList;
 
     }
@@ -96,12 +97,12 @@ public class User {
         this.password = password;
     }
 
-    public Role getRole() {
-        return role;
+    public List<String> getRoles() {
+        return roles;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
     }
 
     public List<Training> getTrainingList() {
