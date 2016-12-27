@@ -6,25 +6,47 @@
 </head>
 <body>
 
-<!--
-<div th:include="model/indexMenu :: indexMenu"></div>
--->
 
-    <div class="col-md-12">
+    <div class="image-in-the-background">
+        <div class="row">
+         <div th:include="model/indexMenu :: indexMenu"></div>
+        </div>
         <div class="jumbotron jumbotron-fluid jumbotron-homepage">
             <div class="container ca-margin-top-50px">
                 <h1 style="color: white">Trainer's place</h1>
-                <p style="font-size: large; color: white ">Dość żmudnego planowania szkoleń w arkuszach.</p>
-                <p style="font-size: large; color: white">Dzięki aplikacji <strong>Trainer's place</strong> masz możliwość szybko i intuicyjnie zaprojektować szkolenie. Tak
-                    prosto nie było jeszcze nigdy.</p>
-                <div class="row ca-margin-top-100px">
+                <p style="font-size: large; color: white ">No more tedious designing training sessions in sheets.</p>
+                <p style="font-size: large; color: white">WebApp<strong>Trainer's place</strong>  gives the possibility to design a training in the most intuitive and comfortable way!</p>
+                <p style="font-size: large; color: white">It has never been so easy!</p>
+                <div class="row row-buttons ca-margin-top-100px ">
                     <button id="signInButton" class="btn btn-raised btn-primary pull-right" >Sign up</button>
                     <button id="logInButton" class="btn  btn-primary pull-right" >Log In</button>
                 </div>
+
+            </div>
+            <div class="row row-homepage ca-margin-top-100px ">
+                <div class="col-md-5">
+                    <div class="card card-primary">
+                        <div class="card-block">
+                            <blockquote class="blockquote">
+                                <p class="mb-0">Trainer's place is a great and intuitive web platform! It made delivering training sessions even more pleasurable.</p>
+                                <footer class="blockquote-footer">Tony Robbins<cite title="Source Title"> New York Times</cite></footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card card-primary">
+                        <div class="card-block">
+                            <blockquote class="blockquote">
+                                <p class="mb-0">Trainer's place is great and intuitive web platform! It made delivering training sessions even more pleasurable.</p>
+                                <footer class="blockquote-footer">Tony Robbins<cite title="Source Title"> New York Times</cite></footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-
-    </div>
+        </div>
 </div>
 
 <script>

@@ -17,7 +17,7 @@ import java.util.Collection;
 @Transactional(
         propagation = Propagation.SUPPORTS,
         readOnly = true)
-public class BlockServiceBean implements BlockService {
+public class BlockServiceImpl implements BlockService {
 
     @Autowired
     private BlockRepository blockRepository;

@@ -20,7 +20,7 @@ import java.util.Collection;
 @Transactional(
         propagation = Propagation.SUPPORTS,
         readOnly = true)
-public class UserServiceBean implements UserService{
+public class UserServiceImpl implements UserService{
 
     @Autowired
     private UserRepository userRepository;

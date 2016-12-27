@@ -46,7 +46,7 @@ public class BlockController {
     public String getBlock(Model model, @PathVariable("id") Long id){
         Block block = blockService.findOne(id);
         model.addAttribute("block", block );
-        return "/block/blockresult";
+        return "/block/blockResult";
     }
 
     @RequestMapping(
@@ -74,7 +74,7 @@ public class BlockController {
         model.addAttribute("block", savedBlock);
 
 
-        return "/block/blockresult";
+        return "/block/blockResult";
 
     }
 
@@ -88,7 +88,7 @@ public class BlockController {
     public String getUdateBlockView(Model model, @PathVariable("id") Long id){
         Block updatedBlock = blockService.findOne(id);
         model.addAttribute("block", updatedBlock);
-        return "/block/update_block";
+        return "/block/updateBlock";
 
 
     }
@@ -116,7 +116,7 @@ public class BlockController {
         Block deleteBlock = blockService.findOne(id);
         model.addAttribute("block", deleteBlock);
 
-        return "/block/delete_block_form";
+        return "/block/deleteBlock";
     }
 
     @RequestMapping(

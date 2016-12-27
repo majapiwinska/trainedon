@@ -8,8 +8,10 @@
 <body>
 <div th:include="model/topMenu :: topMenu"/>
 
-<div class="col-md-10">
-    <div class="jumbotron">
+<div class="container-fluid image-in-the-background" align="center">
+
+<div class="col-md-8 form-position" style="position: relative; margin-top: 10px; margin-left: 15.5%">
+    <div class="jumbotron" >
         <h2>Create training</h2>
             <form  action="#" th:action="@{/form}" th:object="${training}" method="post">
                 <div class="form-group label-floating" >
@@ -36,9 +38,10 @@
             </form>
     </div>
 </div>
-<div class="col-md-8">
+<div class="col-md-8"  style="position: relative; margin-top: 10px; margin-left: 15.5%">
+    <div class="jumbotron">
     <h2>Blocks</h2>
-        <table>
+        <table class="table table-striped">
             <tr>
                 <th>Id</th>
                 <th>Title</th>
@@ -53,7 +56,8 @@
             </tr>
         </table>
 </div>
-
+</div>
+</div>
 </body>
 </html>
 

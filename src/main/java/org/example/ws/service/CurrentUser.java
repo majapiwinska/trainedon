@@ -1,5 +1,6 @@
-package org.example.ws.model;
+package org.example.ws.service;
 
+import org.example.ws.model.User;
 import org.springframework.security.core.authority.AuthorityUtils;
 
 import java.util.List;

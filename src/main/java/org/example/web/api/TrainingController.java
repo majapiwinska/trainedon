@@ -51,7 +51,7 @@ public class TrainingController {
     public String getTraining(Model model, @PathVariable("id") Long id){
         Training training = trainingService.findOne(id);
         model.addAttribute("training", training);
-        return "/training/trainingresult";
+        return "/training/trainingResult";
 
     }
 
@@ -81,7 +81,7 @@ public class TrainingController {
         Training savedTraining = trainingService.create(training);
         userService.addTrainingToUser(user, training);
         model.addAttribute("training", savedTraining);
-        return "/training/trainingresult";
+        return "/training/trainingResult";
 
     }
 
@@ -109,7 +109,7 @@ public class TrainingController {
     public String getUpdateTrainingView(Model model, @PathVariable("id") Long id){
         Training updatedTraining = trainingService.findOne(id);
         model.addAttribute("training", updatedTraining);
-        return "/training/updateform";    }
+        return "/training/updateTraining";    }
 
     @RequestMapping(
             value = "/update",
@@ -122,7 +122,7 @@ public class TrainingController {
         if(updatedTraining == null){
             return "There's no such training session!";
         }
-        return "/training/trainingresult";
+        return "/training/trainingResult";
     }
 
     @RequestMapping(
@@ -133,7 +133,7 @@ public class TrainingController {
         Training deleteTraining = trainingService.findOne(id);
         model.addAttribute("training", deleteTraining);
 
-        return "/training/deleteform";
+        return "/training/deleteForm";
     }
 
     @RequestMapping(
@@ -182,6 +182,6 @@ public class TrainingController {
 
         model.addAttribute("blocks", blockList);
         model.addAttribute("training", training);
-        return "/training/trainingresult";
+        return "/training/trainingResult";
     }
 }

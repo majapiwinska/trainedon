@@ -22,7 +22,7 @@ import java.util.List;
 @Transactional(
         propagation = Propagation.SUPPORTS,
         readOnly = true)
-public class TrainingServiceBean implements TrainingService {
+public class TrainingServiceImpl implements TrainingService {
 
    @Autowired
    private BlockRepository blockRepository;

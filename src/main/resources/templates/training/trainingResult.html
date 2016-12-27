@@ -68,9 +68,9 @@
 <body>
 <div th:include="model/topMenu :: topMenu"></div>
 
-<div class="container-fluid">
+<div class="container-fluid image-in-the-background">
     <h1></h1>
-    <table class="table table-striped">
+    <table class="table table-striped" style="background-color: whitesmoke">
         <tr>
             <th>Id</th>
             <th>training Name</th>
@@ -89,8 +89,8 @@
     </table>
     <div  class="col-md-12">
         <ul id="sortable" class="ui-sortable list-group">
-            <li id="listElement" class="card ui-state-default list-group-item" th:each="block : ${training.blocks}" >
-                <div class=" col-md-12 card-success card-title text-center" th:text="${block.title}"></div>
+            <li id="listElement" class="card ui-state-default list-group-item" style="color: black" th:each="block : ${training.blocks}" >
+                <div class="col-md-12 card-green card-title text-center" th:text="${block.title}"></div>
                 <div class="col-md-12 card-subtitle text-center" th:text="${block.category}"></div>
                 <div class="col-md-2 card-subtitle text-center" th:attr="block-id=${block.id}" th:text="${block.id}"></div>
                 <div class="card-text col-md-8 text-center" th:text="${block.description}"></div>
@@ -107,7 +107,7 @@
 
 
     <form th:action="@{'/new_block/'+${training.id}}" th:object="${block}" id="newBlock2" method="post">
-        <table class="table">
+        <table class="table" style="background-color: white">
             <tr>
                 <td>Title:</td>
                 <td><input type="text" name="title"/> </td>
