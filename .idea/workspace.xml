@@ -2,34 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d8a65df-d6fd-40c8-8d16-1fc6e5eab6fe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/example/web/api/BlockController.class" afterPath="$PROJECT_DIR$/target/classes/org/example/web/api/BlockController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/example/web/api/TrainingController.class" afterPath="$PROJECT_DIR$/target/classes/org/example/web/api/TrainingController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/example/ws/model/Block.class" afterPath="$PROJECT_DIR$/target/classes/org/example/ws/model/Block.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/example/ws/model/Training.class" afterPath="$PROJECT_DIR$/target/classes/org/example/ws/model/Training.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/example/ws/repository/TrainingRepository.class" afterPath="$PROJECT_DIR$/target/classes/org/example/ws/repository/TrainingRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/example/Application.class" afterPath="$PROJECT_DIR$/target/classes/org/example/Application.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/example/web/api/IndexController.class" afterPath="$PROJECT_DIR$/target/classes/org/example/web/api/IndexController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/example/ws/model/Training$1.class" afterPath="$PROJECT_DIR$/target/classes/org/example/ws/model/Training$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/example/ws/repository/BlockRepository.class" afterPath="$PROJECT_DIR$/target/classes/org/example/ws/repository/BlockRepository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/example/ws/service/BlockService.class" afterPath="$PROJECT_DIR$/target/classes/org/example/ws/service/BlockService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/example/ws/service/TrainingService.class" afterPath="$PROJECT_DIR$/target/classes/org/example/ws/service/TrainingService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/example/config/SecurityConfig.java" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/SecurityConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/example/web/api/BlockController.java" afterPath="$PROJECT_DIR$/src/main/java/org/example/web/api/BlockController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/example/web/api/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/org/example/web/api/LoginController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/example/web/api/TrainingController.java" afterPath="$PROJECT_DIR$/src/main/java/org/example/web/api/TrainingController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/example/web/api/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/org/example/web/api/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/example/ws/model/Block.java" afterPath="$PROJECT_DIR$/src/main/java/org/example/ws/model/Block.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/example/ws/model/Training.java" afterPath="$PROJECT_DIR$/src/main/java/org/example/ws/model/Training.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/example/ws/model/User.java" afterPath="$PROJECT_DIR$/src/main/java/org/example/ws/model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/example/ws/repository/BlockRepository.java" afterPath="$PROJECT_DIR$/src/main/java/org/example/ws/repository/BlockRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/example/ws/repository/TrainingRepository.java" afterPath="$PROJECT_DIR$/src/main/java/org/example/ws/repository/TrainingRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/example/ws/service/CurrentUser.java" afterPath="$PROJECT_DIR$/src/main/java/org/example/ws/service/CurrentUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/example/ws/service/TrainingServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/example/ws/service/TrainingServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/example/ws/service/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/example/ws/service/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/block/blocks.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/block/blocks.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/block/deleteBlock.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/block/deleteBlock.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/training/deleteForm.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/training/deleteForm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/training/trainingResult.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/training/trainingResult.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/training/updateTraining.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/training/updateTraining.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/user/createUser.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/createUser.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/training-web.iml" afterPath="$PROJECT_DIR$/training-web.iml" />
     </list>
     <ignored path="training-web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,8 +47,8 @@
       <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/example/ws/service/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="108" column="34" selection-start-line="108" selection-start-column="34" selection-end-line="108" selection-end-column="34" />
+            <state relative-caret-position="270">
+              <caret line="109" column="51" selection-start-line="109" selection-start-column="51" selection-end-line="109" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -83,10 +64,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TrainingServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TrainingServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/example/ws/service/TrainingServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
+            <state relative-caret-position="1350">
               <caret line="88" column="13" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
               <folding />
             </state>
@@ -96,8 +77,32 @@
       <file leaf-file-name="manageTrainings.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/manageTrainings.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="77" selection-start-line="17" selection-start-column="77" selection-end-line="17" selection-end-column="77" />
+            <state relative-caret-position="180">
+              <caret line="10" column="13" selection-start-line="6" selection-start-column="4" selection-end-line="10" selection-end-column="13" />
+              <folding>
+                <element signature="n#style#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manageUsers.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/manageUsers.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+              <folding>
+                <element signature="n#style#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deleteUser.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/deleteUser.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -133,31 +138,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/example/web/api/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="60" column="41" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/example/web/api/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-885">
-              <caret line="29" column="37" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrainingService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/example/ws/service/TrainingService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="26" column="2" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
+            <state relative-caret-position="141">
+              <caret line="91" column="19" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -216,19 +201,16 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/user/deleteUser.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/training/deleteForm.html" />
         <option value="$PROJECT_DIR$/training-web.iml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/example/web/api/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/example/ws/repository/BlockRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/example/ws/model/Block.java" />
         <option value="$PROJECT_DIR$/src/main/resources/config/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/org/example/ws/model/Training.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/example/ws/repository/TrainingRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/example/ws/service/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/example/ws/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/example/ws/service/CurrentUser.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/training/trainingResultForViewOnly.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/admin/allUsers.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/admin/manageTraimings.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/manageUsers.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/admin/adminHomePage.html" />
         <option value="$PROJECT_DIR$/src/main/java/org/example/config/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/example/web/api/LoginController.java" />
@@ -237,6 +219,9 @@
         <option value="$PROJECT_DIR$/src/main/java/org/example/web/api/AdminController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/example/ws/service/TrainingServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/example/web/api/TrainingController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/manageUsers.html" />
+        <option value="$PROJECT_DIR$/src/main/java/org/example/ws/service/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/example/web/api/UserController.java" />
       </list>
     </option>
   </component>
@@ -1289,7 +1274,7 @@
       <workItem from="1483823868428" duration="379000" />
       <workItem from="1483824958647" duration="10145000" />
       <workItem from="1483866398584" duration="1817000" />
-      <workItem from="1483868398633" duration="16092000" />
+      <workItem from="1483868398633" duration="17849000" />
     </task>
     <task id="LOCAL-00001" summary="Added bootstrap">
       <created>1476713687919</created>
@@ -1368,11 +1353,18 @@
       <option name="project" value="LOCAL" />
       <updated>1482850700083</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Admi panel added and views display changed accordingly to the role">
+      <created>1483885776688</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1483885776688</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="588865000" />
+    <option name="totallyTimeSpent" value="590622000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1385,7 +1377,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1985" y="24" width="1615" height="1026" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1407,7 +1399,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" x="953" y="558" width="79" height="44" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34" sideWeight="0.4930901" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34" sideWeight="0.4930901" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.87762904" sideWeight="0.5062893" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1440,42 +1432,11 @@
     <MESSAGE value="tmp commit" />
     <MESSAGE value="updated index page" />
     <MESSAGE value="front updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="front updated" />
+    <MESSAGE value="Admi panel added and views display changed accordingly to the role" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admi panel added and views display changed accordingly to the role" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/ws/service/UserServiceImpl.java</url>
-          <line>106</line>
-          <properties />
-          <option name="timeStamp" value="103" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/ws/service/UserServiceImpl.java</url>
-          <line>113</line>
-          <properties />
-          <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/ws/service/UserServiceImpl.java</url>
-          <line>112</line>
-          <properties />
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/ws/service/UserServiceImpl.java</url>
-          <line>108</line>
-          <properties />
-          <option name="timeStamp" value="107" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/ws/service/UserServiceImpl.java</url>
-          <line>109</line>
-          <properties />
-          <option name="timeStamp" value="108" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="133" />
     </breakpoint-manager>
     <watches-manager />
@@ -1532,14 +1493,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="438">
           <caret line="52" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/deleteUser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1775,14 +1728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/manageUsers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/model/adminMenu.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -1831,30 +1776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/example/ws/service/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="108" column="34" selection-start-line="108" selection-start-column="34" selection-end-line="108" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/manageTrainings.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="77" selection-start-line="17" selection-start-column="77" selection-end-line="17" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/example/web/api/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-885">
-          <caret line="29" column="37" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/example/web/api/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1889,8 +1810,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/example/ws/service/TrainingServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
+        <state relative-caret-position="1350">
           <caret line="88" column="13" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/deleteUser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/manageTrainings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="13" selection-start-line="6" selection-start-column="4" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/manageUsers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/example/ws/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="109" column="51" selection-start-line="109" selection-start-column="51" selection-end-line="109" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/example/web/api/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="91" column="19" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="19" />
           <folding />
         </state>
       </provider>

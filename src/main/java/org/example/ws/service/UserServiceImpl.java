@@ -107,6 +107,7 @@ public class UserServiceImpl implements UserService{
        Collection<Training> trainingsCreatedByUser = trainingRepository.findByUser(user);
        for(Training training : trainingsCreatedByUser){
            training.setUser(null);
+           user.getTrainingList().remove(training);
            trainingRepository.delete(training.getId());
        }
        Collection<Training> check = trainingRepository.findByUser(user);

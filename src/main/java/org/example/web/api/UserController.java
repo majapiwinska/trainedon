@@ -93,10 +93,18 @@ public class UserController {
             method = RequestMethod.POST,
             value = "/deleteUser"
     )
-    public String deleteUser(User user, Model model){
+    public String deleteUser(User user, Model model, Principal principal){
         Long id = user.getId();
+        String email = principal.getName();
+        User currentUser = userService.findUserByEmail(email);
+        List<String> roles = currentUser.getRoles();
+        model.addAttribute("user", currentUser);
         userService.delete(id);
-        return "/index";
+        if(roles.contains("ADMIN")){
+            return "/admin/adminHomePage";
+        }else {
+            return "/index";
+        }
     }
 
     @RequestMapping(
