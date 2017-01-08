@@ -37,11 +37,11 @@ public class Training {
     private User user;
 
 
-    @ManyToMany(cascade = {CascadeType.ALL})
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
             name="training_block",
-            joinColumns = {@JoinColumn(name = "training_id", referencedColumnName = "id")},
-            inverseJoinColumns = {@JoinColumn(name = "block_id", referencedColumnName = "id")})
+            joinColumns = {@JoinColumn(name = "training_id")},
+            inverseJoinColumns = {@JoinColumn(name = "block_id")})
     @OrderColumn(updatable = true)
     private List<Block> blocks = new ArrayList<Block>() {
     };

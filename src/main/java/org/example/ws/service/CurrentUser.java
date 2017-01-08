@@ -18,6 +18,7 @@ public class CurrentUser extends  org.springframework.security.core.userdetails.
 
     }
 
+
     public User getUser() {
         return user;
     }
@@ -28,4 +29,5 @@ public class CurrentUser extends  org.springframework.security.core.userdetails.
 
     public List<String> getRoles(){return user.getRoles();
     }
+
 }

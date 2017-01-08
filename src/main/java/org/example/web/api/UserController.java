@@ -80,23 +80,23 @@ public class UserController {
     }
 
     @RequestMapping(
-            method = RequestMethod.DELETE,
-            value = "/deleteUser/{id}"
+            method = RequestMethod.GET,
+            value = "/user/deleteUser/{id}"
     )
-    public String deleteUserView(@PathVariable("id") Long id, Model model){
+    public String getDeleteUserView(@PathVariable("id") Long id, Model model){
         User deletedUser = userService.findUserById(id);
         model.addAttribute("user", deletedUser);
-        return "/deleteUser";
+        return "/user/deleteUser";
     }
 
     @RequestMapping(
-            method = RequestMethod.DELETE,
+            method = RequestMethod.POST,
             value = "/deleteUser"
     )
     public String deleteUser(User user, Model model){
         Long id = user.getId();
         userService.delete(id);
-        return "/allTrainings";
+        return "/index";
     }
 
     @RequestMapping(

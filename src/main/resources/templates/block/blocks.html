@@ -6,17 +6,18 @@
 </head>
 <body>
 <div th:include="model/topMenu :: topMenu"></div>
-
-<div class="row">
-    <h1>Blocks</h1>
-</div>
-<div class="row">
-    <div class="col-md-4"  th:each="block : ${blocks}">
-        <div class="card">
-            <div class="card-title" th:text="${block.title}"></div>
-            <div class="card-subtitle" th:text="${block.id}"></div>
-            <div class="card-text" th:text="${block.description}"></div>
-            <div class="card-text" th:text="${block.minutes}"></div>
+<div class="container-fluid image-in-the-background">
+    <div class="row">
+        <h1 style="color: white">Blocks</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-4"  th:each="block : ${blocks}">
+            <div class="card">
+                <div class="card-title" th:text="${block.title}"></div>
+                <div class="card-subtitle" th:text="${block.id}"></div>
+                <div class="card-text" th:text="${block.description}"></div>
+                <div class="card-text" th:text="${block.minutes}"></div>
+            </div>
         </div>
     </div>
 </div>

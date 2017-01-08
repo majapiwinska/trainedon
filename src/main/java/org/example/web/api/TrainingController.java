@@ -7,7 +7,6 @@ import org.example.ws.service.BlockService;
 import org.example.ws.service.TrainingService;
 import org.example.ws.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -48,11 +47,15 @@ public class TrainingController {
             value = "/training/{id}",
             method = RequestMethod.GET
     )
-    public String getTraining(Model model, @PathVariable("id") Long id){
+    public String getTraining(Model model, @PathVariable("id") Long id, Principal principal) {
         Training training = trainingService.findOne(id);
         model.addAttribute("training", training);
-        return "/training/trainingResult";
-
+        String currentUser = principal.getName();
+        if (training.getTrainer().equals(currentUser)) {
+            return "/training/trainingResult";
+        } else {
+            return "/training/trainingResultForViewOnly";
+        }
     }
 
     @RequestMapping(value = "/form/{userId}",
@@ -89,7 +92,6 @@ public class TrainingController {
             value = "/new_block/{trainingId}",
             method = RequestMethod.POST
     )
-    @PreAuthorize("hasRole('ROLE_USER')")
     public String createBlockAndAddToTraining(Block block, Model model, @PathVariable("trainingId") Long trainingId){
 
         Block savedBlock = blockService.create(block);
@@ -138,14 +140,22 @@ public class TrainingController {
 
     @RequestMapping(
             value = "/delete",
-            method = RequestMethod.DELETE
+            method = RequestMethod.POST
     )
-    public String handleDeleteTrainingForm(Training training, Model model){
+    public String handleDeleteTrainingForm(Training training, Model model, Principal principal){
          Long id = training.getId();
          trainingService.delete(id);
         Collection<Training> trainings = trainingService.findAll();
         model.addAttribute("trainings", trainings);
-        return "/allTrainings";
+
+       User currentUser = userService.findUserByEmail(principal.getName());
+       model.addAttribute("user", currentUser);
+       List<String> roles = currentUser.getRoles();
+        if(roles.contains("ADMIN")){
+            return "/admin/adminHomePage";
+        }else {
+            return "/allTrainings";
+        }
     }
 
 

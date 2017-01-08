@@ -33,7 +33,7 @@ public class User {
     @ElementCollection(targetClass = String.class, fetch = FetchType.EAGER)
     private List<String> roles = new ArrayList<String>();
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
             name = "user_training",
             joinColumns = {@JoinColumn(name = "user_id")},
@@ -41,10 +41,6 @@ public class User {
     @Nullable
     private List<Training> trainingList = new ArrayList<Training>();
 
-
-   /* public enum Role {
-        USER, ADMIN, OWNER
-    }*/
     public User(){};
 
     public User(String firstName, String lastName, String email, String password, List<String> roles, List<Training> trainingList) {

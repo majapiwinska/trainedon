@@ -1,6 +1,7 @@
 package org.example.ws.model;
 
 import com.sun.istack.internal.Nullable;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -20,6 +21,7 @@ public class Block {
     @NotNull
     private String title;
 
+    @Type(type="text")
     private String description;
 
     @NotNull
@@ -29,11 +31,11 @@ public class Block {
     @Enumerated(EnumType.STRING)
     private Category category;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
              name="training_block",
-             joinColumns = {@JoinColumn(name = "block_id", referencedColumnName = "id")},
-             inverseJoinColumns = {@JoinColumn(name = "training_id", referencedColumnName = "id")})
+             joinColumns = {@JoinColumn(name = "block_id")},
+             inverseJoinColumns = {@JoinColumn(name = "training_id")})
     private List<Training> trainings = new ArrayList<Training>();
 
     /*@OneToMany(mappedBy = "block")

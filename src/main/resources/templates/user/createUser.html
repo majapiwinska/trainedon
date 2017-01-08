@@ -8,7 +8,7 @@
 <body>
 <div th:include="model/indexMenu :: indexMenu"></div>
 <div class="container-fluid image-in-the-background">
-<div class="col-lg-4 col-md-6 col-sm-10 image-in-the-background">
+<div class="col-md-6" style="position: relative; margin-top: 10px; margin-left: 24%">
 <div class="container">
     <div class="jumbotron">
         <form  id="newUser" action="#" th:action="@{/createUser}" th:object="${user}" method="post">

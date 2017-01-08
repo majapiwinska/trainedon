@@ -2,6 +2,7 @@ package org.example.ws.service;
 
 import org.example.ws.model.Block;
 import org.example.ws.model.Training;
+import org.example.ws.model.User;
 import org.example.ws.repository.BlockRepository;
 import org.example.ws.repository.TrainingRepository;
 import org.example.ws.repository.UserRepository;
@@ -76,7 +77,16 @@ public class TrainingServiceImpl implements TrainingService {
     @Transactional(propagation = Propagation.REQUIRED,
             readOnly = false)
     public void delete(Long id) {
-       trainingRepository.delete(id);
+        Training training = trainingRepository.findOne(id);
+
+        User user = training.getUser();
+        Long userId = user.getId();
+        List<Training> usersTrainings = user.getTrainingList();
+        int index = usersTrainings.indexOf(training);
+        Training trainingToDelete = usersTrainings.get(index);
+        userRepository.findOne(userId).getTrainingList().remove(trainingToDelete);
+
+        trainingRepository.delete(id);
     }
 
     @Override

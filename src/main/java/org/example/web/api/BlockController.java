@@ -5,7 +5,6 @@ import org.example.ws.model.User;
 import org.example.ws.service.BlockService;
 import org.example.ws.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -53,7 +52,6 @@ public class BlockController {
             value = "/blockForm",
             method = RequestMethod.GET
     )
-    @PreAuthorize("hasRole('ROLE_USER')")
     public String getCreateBlockView(@ModelAttribute Block block){
 
         return "/block/blockForm";
@@ -63,7 +61,6 @@ public class BlockController {
             value = "/blockForm",
             method = RequestMethod.POST
     )
-    @PreAuthorize("hasRole('ROLE_USER')")
     public String handleCreateBlockForm(Block block, Model model, Principal principal){
         String email = principal.getName();
         User user = userService.findUserByEmail(email);
@@ -84,7 +81,6 @@ public class BlockController {
             value = "/update/block/{id}",
             method = RequestMethod.GET
     )
-    @PreAuthorize("hasRole('ROLE_OWNER')")
     public String getUdateBlockView(Model model, @PathVariable("id") Long id){
         Block updatedBlock = blockService.findOne(id);
         model.addAttribute("block", updatedBlock);
@@ -97,7 +93,6 @@ public class BlockController {
             value = "/update_block",
             method = RequestMethod.POST
     )
-    @PreAuthorize("hasRole('ROLE_OWNER')")
     public String handleUpdateBlockForm(Block block, Model model){
 
         Block updatedBlock = blockService.update(block);

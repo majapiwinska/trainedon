@@ -30,6 +30,7 @@
                 } 
             });
 
+
             function saveChanges(){
                 var blocks = new Array();
                 $("#sortable li").each(function (index) {
@@ -100,42 +101,55 @@
                 <!--<div class="card-text col-md-2 text-center" th:text="${block.order}"></div>-->
             </li>
         </ul>
-        <button id="saveChangesButton" th:attr="updated-blocks=${training.blocks}, training-id=${training.id}" >Save changes</button>
+        <button id="updateForm" class="btn btn-raised btn-primary" th:attr="training-id=${training.id}">Update training form</button>
+        <button id="saveChangesButton" class="btn btn-raised btn-primary" th:attr="updated-blocks=${training.blocks}, training-id=${training.id}" >Save changes</button>
     </div>
 
 <!--    <button onclick="createBlock()">Create new block</button>-->
 
+    <div class="col-md-10" style="margin-left: 8.3%">
+        <div class="jumbotron">
+            <form th:action="@{'/new_block/'+${training.id}}" th:object="${block}" id="newBlock2" method="post">
+                <div class="form-group label-floating">
+                    <label class="control-label"> Title:</label>
+                    <input type="text" class="form-control" name="title"/>
+                </div>
+                <div class="form-group label-floating">
+                    <label class="control-label"> Descrition:</label>
+                    <input type="text" class="form-control"  name="description"/>
+                </div>
+                <div class="form-group label-floating">
+                    <label class="control-label"> Time:</label>
+                    <input type="text" class="form-control" name="minutes"/>
+                </div>
 
-    <form th:action="@{'/new_block/'+${training.id}}" th:object="${block}" id="newBlock2" method="post">
-        <table class="table" style="background-color: white">
-            <tr>
-                <td>Title:</td>
-                <td><input type="text" name="title"/> </td>
-            </tr>
-            <tr>
-                <td>Description:</td>
-                <td><input type="text" name="description"/></td>
-            </tr>
-            <tr>
-                <td>Time:</td>
-                <td><input type="text" name="minutes"/></td>
-            </tr>
-        </table>
-
-        <div class="form-group label-floating">
-            <label class="control-label">Category</label>
-            <select class="form-control" type="text" name="category">
-                <option value="THEORY">theory</option>
-                <option value="EXERCISE">exercise</option>
-                <option value="DISCUSSION">discussion</option>
-                <option value="DEBRIEFING">debriefing</option>
-                <option value="ENERGIZER">energizer</option>
-                <option value="BREAK">break</option>
-            </select>
+                <div class="form-group label-floating">
+                    <label class="control-label">Category</label>
+                    <select class="form-control" type="text" name="category">
+                        <option value="THEORY">theory</option>
+                        <option value="EXERCISE">exercise</option>
+                        <option value="DISCUSSION">discussion</option>
+                        <option value="DEBRIEFING">debriefing</option>
+                        <option value="ENERGIZER">energizer</option>
+                        <option value="BREAK">break</option>
+                    </select>
+                </div>
+                <button class="btn btn-raised btn-primary" type="submit" th:value="Submit">Submit</button>
+            </form>
         </div>
-        <input type="submit" th:value="Submit"/>
-    </form>
+    </div>
 </div>
+
+<script th:inline="javascript">
+    $(document).ready(function () {
+        $("#updateForm").click(function() {
+            var trainingId = [[${training.id}]];
+            window.location.href = "/update/"+trainingId;
+        });
+
+    });
+</script>
+
 
 </body>
 

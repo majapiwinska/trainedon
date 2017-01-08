@@ -25,6 +25,9 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private UserRepository userRepository;
 
+    /**
+     *
+     */
     @Autowired
     private TrainingRepository trainingRepository;
 
@@ -100,6 +103,14 @@ public class UserServiceImpl implements UserService{
     @Transactional(propagation = Propagation.REQUIRED,
             readOnly = false)
     public void delete(Long id) {
+       User user = userRepository.findOne(id);
+       Collection<Training> trainingsCreatedByUser = trainingRepository.findByUser(user);
+       for(Training training : trainingsCreatedByUser){
+           training.setUser(null);
+           trainingRepository.delete(training.getId());
+       }
+       Collection<Training> check = trainingRepository.findByUser(user);
+       System.out.println(check);
        userRepository.delete(id);
 
     }

@@ -11,5 +11,5 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @Transactional
-public interface BlockRepository extends JpaRepository<Block, Long> {
+public interface BlockRepository extends JpaRepository<Block, Long>{
 }
